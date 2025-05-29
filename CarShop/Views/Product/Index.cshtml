@@ -1,0 +1,43 @@
+﻿@model Product
+
+ @{
+    ViewData["Title"] = $"{Model.Name}";
+}
+
+<h1>@Model.Name</h1>
+
+<div>
+    <img src="@Model.ImageUrl" alt="Image of @Model.Name" />
+</div>
+
+
+
+<p><strong>Цена:</strong> @Model.Price.ToString("C")</p>
+
+<p><strong>Описание:</strong> @Model.Description</p>
+
+<a href="/home/index" class="btn btn-primary">Назад</a>
+
+ @* <a class="btn btn dark" href="/home/index" role="button"> Продолжить покупки</a>  *@
+
+<a class="btn btn dark" href="/cart/add?productId=@Model.Id" role="button"> Добавить в корзину</a> 
+
+
+
+
+
+
+@* <div class="row">
+    <div class="col-6">
+        <img class="productd-img-top" src=@Model.ImageUrl alt="Изображение товара" />
+    </div>
+
+<div class="col-6">
+<h5>@Model.Name</h5>
+<h5>@Model.Price руб</h5>
+<h5>@Model.Description</h5>
+
+<a class="btn btn dark" href="/product/add?productId=@Model.Id" role="button"> Добавить в корзину</a>
+
+</div>
+</div> *@

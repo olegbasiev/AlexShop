@@ -1,0 +1,144 @@
+﻿@model Cart
+
+@if (Model == null)
+{
+	<h3>Корзина пуста</h3>
+}
+else
+{
+
+    //<!DOCTYPE html>
+    //<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Корзина</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            th, td {
+                padding: 15px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+
+            .button-container {
+                text-align: center;
+            }
+
+            .button {
+                background-color: #28a745; /* Зеленый цвет */
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                margin: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .button:hover {
+                    background-color: #218838; /* Темнее зеленый при наведении */
+                }
+
+                .button.secondary {
+                    background-color: #007bff; /* Синий цвет */
+                }
+
+                    .button.secondary:hover {
+                        background-color: #0069d9; /* Темнее синий при наведении */
+                    }
+
+            .success-message {
+                display: none;
+                font-size: 18px;
+                color: #28a745; /* Зеленый цвет для сообщения */
+                text-align: center;
+                margin-top: 20px;
+            }
+        </style>
+        <script>
+            function submitOrder() {
+                // Скрыть кнопку "ОФОРМИТЬ ЗАКАЗ"
+                document.getElementById("orderButton").style.display = "none";
+
+                // Показать сообщение о завершении заказа
+                document.getElementById("successMessage").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+
+        <h1>Корзина</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Название товара</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Итоговая цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Product.Price</td>
+                        <td>@item.Amount</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="button-container">
+            @* <button class="button secondary" href="/home/index" role="button">Продолжить покупки</button> *@
+            <a href="/home/index" class="btn btn-primary">Продолжить покупки</a>
+            
+            <button id="orderButton" class="button" onclick="submitOrder()">ОФОРМИТЬ ЗАКАЗ</button>
+
+        </div>
+
+        <div id="successMessage" class="success-message">
+            ГОТОВО! Ваш заказ на рассмотрении.
+        </div>
+
+    </body>
+    //</html>
+
+
+
+
+
+}
