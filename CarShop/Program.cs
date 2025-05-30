@@ -1,12 +1,21 @@
 using Microsoft.Extensions.DependencyInjection;
 using AlexShop.Models;
 using Microsoft.EntityFrameworkCore;
+using DBOnlineShop;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+string connection = builder.Configuration.GetConnectionString("online_shop"); //"DefailtConnection"
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+builder.Services.AddTransient<IServiceRepository, ServicesDbRepository>();
+
 
 var app = builder.Build();
 
