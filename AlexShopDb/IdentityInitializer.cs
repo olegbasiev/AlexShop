@@ -11,7 +11,7 @@ namespace AlexShopDb
 {
 	public class IdentityInitializer
 	{
-		public static void Initialize(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IStudentsRepository studentsRepository)
+		public static void Initialize(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
 		{
 			var adminEmail = "admin@gmail.com";
 			var password = "z!PZ\"^4GuYecP5B";
@@ -26,12 +26,6 @@ namespace AlexShopDb
 				roleManager.CreateAsync(new IdentityRole(Constants.UserRoleName)).Wait();
 			}
 
-			if (roleManager.FindByNameAsync(Constants.TeacherRoleName).Result == null)
-			{
-				roleManager.CreateAsync(new IdentityRole(Constants.TeacherRoleName)).Wait();
-			}
-
-
 			if (userManager.FindByNameAsync(adminEmail).Result == null)
 			{
 				var admin = new User
@@ -39,12 +33,11 @@ namespace AlexShopDb
 					Email = adminEmail,
 					UserName = adminEmail
 				};
-				var result = studentsRepository.Add(admin, password, out var createdUser);
+				var result = userManager.CreateAsync(admin, password).Result;
 
 				if (result.Succeeded)
 				{
 					userManager.AddToRoleAsync(admin, Constants.AdminRoleName).Wait();
-					userManager.AddToRoleAsync(admin, Constants.TeacherRoleName).Wait();
 
 				}
 			}
