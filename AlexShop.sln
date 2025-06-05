@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBOnlineShop", "..\DBOnlineShop1-master1\DBOnlineShop\DBOnlineShop.csproj", "{DDCD95DF-B5B0-8810-DD7B-7C334F69DA7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexShopDb", "AlexShopDb\AlexShopDb.csproj", "{7B177576-0611-4C9D-A70F-AD830C7AAC11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{A2A15251-80FD-4E42-A813-DC88341DB985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A15251-80FD-4E42-A813-DC88341DB985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A15251-80FD-4E42-A813-DC88341DB985}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDCD95DF-B5B0-8810-DD7B-7C334F69DA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDCD95DF-B5B0-8810-DD7B-7C334F69DA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDCD95DF-B5B0-8810-DD7B-7C334F69DA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDCD95DF-B5B0-8810-DD7B-7C334F69DA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B177576-0611-4C9D-A70F-AD830C7AAC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B177576-0611-4C9D-A70F-AD830C7AAC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B177576-0611-4C9D-A70F-AD830C7AAC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B177576-0611-4C9D-A70F-AD830C7AAC11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
