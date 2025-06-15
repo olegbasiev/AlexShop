@@ -1,4 +1,6 @@
-﻿namespace AlexShop.Models
+﻿using AlexShopDb.Models;
+
+namespace AlexShop.Models
 {
     public class FavoriteItem
     {

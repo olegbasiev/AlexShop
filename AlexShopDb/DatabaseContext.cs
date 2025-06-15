@@ -15,8 +15,17 @@ namespace AlexShopDb
 
 		public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
 		{
-			Database.Migrate();
+			//Database.Migrate();
 		}
-	}
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Закомментируйте или удалите эту строку:
+            // Database.Migrate();
+        }
+    }
 
 }

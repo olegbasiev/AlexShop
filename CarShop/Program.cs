@@ -51,3 +51,17 @@ builder.Services.AddControllersWithViews();
 
 app.MapDefaultControllerRoute();
 app.Run();
+
+
+
+//
+
+
+
+
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("Default"),
+        new MySqlServerVersion(new Version(8, 0, 35)),
+        b => b.MigrationsAssembly("AlexShopDb") // ”кажите правильное им€ сборки
+    ));

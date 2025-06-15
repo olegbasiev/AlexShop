@@ -1,4 +1,5 @@
 ﻿using AlexShop.Models;
+using AlexShopDb.Models;
 namespace AlexShop
 {
     public class CartItem
